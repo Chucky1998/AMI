@@ -1,0 +1,79 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar >
+    <ion-button routerLink="/homepage" color="white">
+      <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+    </ion-button>
+
+    <ion-title>Favorites</ion-title>
+
+    <div class="botoes">
+        
+      <ion-button class="botao1"  color="#FFFFFF" (click)="debug()">
+        <p>Products</p>
+      </ion-button>
+      <ion-button  class="botao2"  color="#FFFFFF">
+        <p>Sellers</p>
+      </ion-button>
+
+    </div>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="cards">
+
+        <ion-card class="search" *ngFor="let cloth of clothesFavorites" (click)="goPageProduct(cloth.id)">
+
+          <img src="{{cloth.image}}" />
+
+          <div class="info-search">
+            <h1 class="title">{{cloth.title}}</h1>
+            <p class="des">{{cloth.description.substring(0,22)}}...</p>
+
+            <div class="info">
+              <div class="bids">
+                <p>Bids {{cloth.numberBids}}</p>
+              </div>
+              <div class="timeleft">
+                <p>Time Left: 16d 2h</p>
+              </div>
+            </div>
+
+            <div class="card-footer">
+              <div>
+                <h3 class="euro">EUR</h3>
+                <h2 class="price">{{cloth.price}}</h2>
+              </div>
+              <p class="condition">{{cloth.condiction}}</p>
+            </div>
+          </div>
+
+        </ion-card>
+        
+
+
+  </div>
+
+
+
+
+
+  <div id="footer">
+
+    <ion-icon name="home" (click)="goHome()"></ion-icon>
+    <ion-icon name="person-circle"></ion-icon>
+
+    <div class="add" (click)="addProduct()">
+      <h1>+</h1>
+      <!--<ion-icon name="add-circle"></ion-icon>-->
+    </div>
+
+    <ion-icon class="active" name="heart"></ion-icon>
+    <ion-icon name="notifications"></ion-icon>
+
+  </div>
+
+
+</ion-content>

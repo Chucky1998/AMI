@@ -1,0 +1,408 @@
+
+.logout{
+    position:absolute;
+    right: 0px;
+    font-size: 30px;
+    color:#6903F3;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+ion-searchbar{
+   
+    --background: white;
+    //--stroke: rgba(194,191,191,0.25) ;
+    --box-shadow: 0px 0px 10px rgba(194,191,191,0.75);
+    --border-radius: 1.2rem;
+    --placeholder-font-weight:300;
+    --placeholder-opacity: 0.2;
+    padding: 7%;
+    margin-top: 12%;
+    margin-bottom: 1.5rem;
+    //position: fixed;
+    //z-index:2;
+
+    
+    
+    
+}
+
+.search{
+    box-shadow: none;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    //width: 100%;
+    margin: 20px;
+
+    img{
+        //width: 40%;
+        width: 87px;
+        //height: 91px;
+        margin-right: 15px;
+    }
+
+    .info-search{
+
+        .title{
+            font-size: 12px;
+            font-weight:bolder;
+            color: #000;
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+        .des{
+            font-size: 11px;
+            font-weight: lighter;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .info{
+            padding: 0;
+            margin-top:2px;
+            display:flex;
+            justify-content:space-between;
+            align-items: center;
+            
+        .bids{
+            background-color:#E303F3;
+            width: fit-content;
+            border-radius: 4px;
+            padding: 2px;
+            margin-right: 2px;
+            
+            
+         
+            p{
+                color:white;
+                font-size: 11px;
+                margin: 0;
+                
+            }
+        }
+        .timeleft{
+            background-color:#0327F3;
+            width: fit-content;
+            border-radius: 4px;
+            padding: 2px;
+            
+
+            p{
+                color:white;
+                font-size: 11px;
+                margin: 0;
+            }
+        }
+
+
+    }
+
+
+    .card-footer{
+        display:flex;
+        justify-content:space-between;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+
+        div{
+
+            .euro{
+                margin-top: 7px;
+                margin-bottom: 0;
+                font-size: 9px;
+                font-weight:bolder;
+                color: #000;
+                
+            }
+
+            .price{
+                margin-top: -2px;
+                font-size: 14px;
+                font-weight:bolder;
+                color: #000;
+                padding-bottom: 0px;
+                margin-bottom: 0;
+            }
+        }
+            
+            .condition{
+                display: flex;
+                align-items: center;
+                color: #6903F3;
+                font-size: 11px;
+                padding-bottom: 0px;
+                margin-bottom: 0;
+            }
+
+    }
+       
+    }
+}
+
+h4{
+    display:inline;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: 600;
+
+}
+
+.options{
+    text-align: center;
+    border-bottom: 2px solid #C2BFBF;
+    height: 35px;
+    
+    
+}
+.active{
+    color: #6903F3 ;
+}
+
+.list-header{
+    font-weight: 600;
+    color: #6903F3 ;
+    font-size: 14px;
+    margin-left: 8%;
+    
+}
+.default-left-padding{
+    padding-left: 5%;
+
+   
+}
+
+
+.activeTab1{
+    background-color: #6903F3;
+    height: 3px;
+    width: 113px;
+    margin-left: 97px;
+    margin-top: -2px;;
+}
+
+.activeTab2{
+    background-color: #6903F3;
+    height: 3px;
+    width: 65px;
+    margin-left: 20px;
+    margin-top: -2px;;
+}
+
+
+
+.cloath-slider{
+    
+    ion-slides {
+       
+        ion-slide{
+            width: 45%;
+            margin-right: 23px ;
+           
+            ion-col{
+                padding-left: 0;
+               
+    
+                ion-card{
+                    width: 100%;
+                    border-radius: 21px;
+                    box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.25);
+                    margin-left: 0;
+                    margin-top:0;
+    
+                    ion-card-header{
+                        text-align: center;
+                        padding-bottom: 0;
+                        margin-bottom: -5px;
+                        img{
+                            padding-top: 10px;
+                            //width: 90%;
+                            height:156px
+                        }
+                    }
+                    ion-card-content{
+                        padding-top: 0px;
+                        padding-left: 15px;
+                        padding-right: 15px;
+                        padding-bottom: 15px;
+                        .cloathname{
+                            color: #000;
+                            font-weight:800;
+                            font-size: 12px;
+                            margin-bottom: 2px;
+                        }
+                        .cloathdes{
+                            
+                            font-size: 11px;
+                            font-weight:lighter;
+                           
+                        }
+                        .info{
+                                padding: 0;
+                                margin-top:2px;
+                                display:flex;
+                                justify-content:space-between;
+                                
+                                
+                            .bids{
+                                background-color:#E303F3;
+                                width: fit-content;
+                                border-radius: 4px;
+                                padding-left: 2px;
+                                padding-right: 2px;
+                                padding-top:2px;
+                               
+                              p{
+                                    color:white;
+                                    font-size: 11px;
+ 
+                                }
+                            }
+                            .timeleft{
+                                background-color:#0327F3;
+                                width: fit-content;
+                                border-radius: 4px;
+                                padding-left: 2px;
+                                padding-right: 2px;
+                                padding-top:2px;
+                                
+    
+                                p{
+                                    color:white;
+                                    font-size: 11px;
+                                }
+                            }
+    
+    
+                        }
+    
+                        .card-footer{
+                            display:flex;
+                            justify-content:space-between;
+                            padding-bottom: 0px;
+                            margin-bottom: 0px;
+                            margin-top: 5px;
+    
+                            div{
+                               
+                                .euro{
+                                    
+                                    font-size: 9px;
+                                    font-weight:bolder;
+                                    color: #000;
+                                    
+                                }
+            
+                                .price{
+                                    margin-top: -2px;
+                                    font-size: 14px;
+                                    font-weight:bolder;
+                                    color: #000;
+                                    padding-bottom: 0px;
+                                    margin-bottom: 0;
+                                }
+                            }
+                                
+                                .condition{
+                                    display: flex;
+                                    align-items: center;
+                                    color: #6903F3;
+                                    font-size: 11px;
+                                    padding-bottom: 0px;
+                                    margin-bottom: 0;
+                                }
+    
+                        }
+                       
+                    }
+                }
+    
+            }
+    
+          
+        }
+
+    }
+  
+}
+
+.disactive{
+    color:#C2BFBF;
+}
+
+.space{
+    height: 100px;
+   
+}
+
+
+
+#footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 75px;
+    background-color: white;
+    display:flex;
+    justify-content:space-between;
+    padding: 17px;
+    z-index:2;
+    margin-top: 100px;
+
+    ion-icon {
+        font-size: 33px;
+      }
+        /*
+      .add{
+        position:relative;
+        bottom: 15px;
+        color:#6903F3;
+        font-size: 57px;
+        box-shadow: 0px 4px 8px 1px rgba(194,191,191,0.75);
+        
+       
+      }*/
+      
+      
+    .add {
+        position:relative;
+        bottom: 15px;
+        width: 56px;
+        height: 56px;
+        -webkit-border-radius: 35px;
+        -moz-border-radius: 35px;
+        border-radius: 38px;
+        background: #6903F3;
+        padding: 0;
+        text-align: center;
+        box-shadow: 0px 4px 8px 1px rgba(105,3,243,0.75);
+        
+        display: table;
+
+        h1{
+            font-size: 45px;
+            margin: 0;
+            padding: 0;
+            color: #FFF;
+            font-weight:10;
+            display: table-cell;
+            vertical-align: middle;
+
+        }
+     
+   
+        /*ion-icon{
+            color:#6903F3;
+            font-size: 57px;
+            box-shadow: 0px 4px 8px 1px rgba(194,191,191,0.75);
+          
+        }*/
+
+       
+      }
+
+      
+}
+
+

@@ -1,0 +1,320 @@
+ion-content{
+    
+    --background: linear-gradient(180deg, rgba(105,3,243,1) 10%, rgb(255, 255, 255,1) 70%);
+    position: relative;
+
+    .header{
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem 0.5rem;
+
+        ion-button{
+            height: 35px;
+            width: 35px;
+        }
+        ion-icon{
+            font-size:1.6rem;
+        }
+
+    }
+
+    .image{
+        position:absolute;
+        //left: 22%;
+        bottom: 48.5%;
+        //width: 56%;
+        width: 375px;
+        height: 375px;
+        //height: 219px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ion-img{
+            height: 219px;
+        }
+
+    }
+
+    .card{
+        //height: 56%;
+        
+        width: 100%;
+        background-color: #fff;
+        position: absolute;
+        top: 290px;
+        //bottom:0;
+        border-radius: 45px 45px 0 0;
+        padding: 20px;
+
+
+     
+
+        .card-title{
+            margin-top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.2rem;
+
+            h1{
+                font-weight:bolder;
+                font-size: 16px;
+            }
+          
+            p{
+                font-size: 12px;
+                font-weight:normal;
+                color:#6903F3;
+            }
+
+            .time-left{
+                background-color: #0327F3;
+                width: fit-content;
+                padding: 4px;
+                border-radius: 4px;
+                p{
+                    color:#FFF;
+                }
+            }
+
+            .price{
+                //background-color: red;
+                padding: 5px 10px;
+                border-radius: 10px;
+                border: 2px solid;
+                border-color: #E303F3;
+
+                h3{
+                    font-size: 12px;
+                    color: #E303F3;
+                    font-weight: bold;
+                }
+                h2{
+                    font-size: 17px;
+                    color: #E303F3;
+                    font-weight: bolder;
+                }
+            }
+        }
+
+        .bid{
+            margin-top: 30px;
+            display: flex;
+            justify-content:center;
+            align-items: center;
+
+
+            .bid-amount{
+                padding: 1px 6px;
+                width: fit-content;
+                margin-right: 15px;
+                border: 2px solid;
+
+                ion-input{
+                    width:100px;
+                }
+            }
+            .place-bid{
+                border-radius: 10px;
+                background-color: #6903F3;
+                width: fit-content;
+                padding: 0px 40px;
+                //height: 42px;
+
+                .button-native {     
+                    color: red;
+                      
+                }
+                
+                p{  
+                    
+                    font-size: 14px;
+                    color: #fff;
+                    font-weight: bolder;
+                }
+            }
+
+        }
+
+        .input-error{
+            color: red;
+            font-size: 12px;
+            padding-left: 15px;
+
+        }
+
+
+
+        .options{
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid #C2BFBF;
+            width: 100%;
+            margin-top: 20px;
+            height: 50px;
+            
+            h4{
+                font-size: 14px;
+                font-weight: 600;
+            }
+
+            .active{
+                color: #6903F3;
+            }
+
+        }
+
+        .tricktab1{
+            background-color: #C2BFBF;
+            height: 1px;
+            width: 20px;
+            position:absolute;
+            left: 0;
+            margin-top: -3px;
+        }
+
+        .activeTab1{
+            background-color: #6903F3;
+            height: 2px;
+            width: 100px;
+            margin-left: -20px;
+            margin-top: -1px;;
+        }
+
+        .activeTab2{
+            background-color: #6903F3;
+            height: 2px;
+            width: 105px;
+            margin-left: 80px;
+            margin-top: -1px;;
+        }
+        .tricktab2{
+            background-color: #C2BFBF;
+            height: 2px;
+            width: 20px;
+            position:absolute;
+            right: 0;
+            margin-top: -3px;
+        }
+
+        .info{
+            border-bottom: 2px solid #C2BFBF;
+            margin-top: 20px;
+            height: 25px;
+
+            span.name { 
+                font-weight:lighter;
+                font-size:14px; 
+            }
+           
+        }
+
+       .tag{
+        font-weight:bolder;
+        font-size:14px; 
+        margin-bottom: 5px;
+       }
+
+       .description{
+        margin-top: 0px;
+        font-size:14px;
+        font-weight: 500;
+       }
+
+       .creator{
+        
+        position: relative;
+        bottom: 10;
+        padding: 10px 25px;
+        display: flex;
+        justify-content: space-around;
+        height: 75px;
+        border-radius:15px;
+        box-shadow: 0px 0px 8px 1px rgba(161,161,161,0.5);
+        
+
+        .nameBit{
+            margin: 0;
+            padding-top: 20px;
+            color:#6903F3;
+            font-weight: bolder;
+           
+        }
+        
+        
+       }
+
+       .histab{
+
+        .info2{
+            border-bottom: 2px solid #C2BFBF;
+            margin-top: 20px;
+            padding: 0;
+
+            .tag2{
+                font-weight:bolder;
+                font-size:14px; 
+                margin: 0;
+               
+            }
+            .startprice{
+                font-weight:bolder;
+                font-size:14px; 
+                margin: 5px 0px;
+                color:#0327F3;
+
+            }
+            
+        }
+        .auction{
+            font-weight:bolder;
+            font-size:14px; 
+        }
+        .bitters{
+            display: flex;
+            justify-content: space-between;
+            .nameBit{
+                font-weight:bolder;
+                font-size:13px; 
+            }
+            .priceBit{
+                font-weight:bolder;
+                font-size:13px; 
+                color: #E303F3;
+            }
+        }
+       }
+
+      
+        
+    }
+    
+}
+
+.photo > img{
+    
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center;
+    margin-right: 15px;
+
+    }
+    .photoname{
+        display: flex;
+        justify-content: start;
+    }
+
+    .photocreator > img{
+    
+        border-radius: 100%;
+        object-fit: cover;
+        object-position: center;
+        box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.79);
+    }
+    .photocreator{
+        width: 75px;
+        height: 75px;
+       
+    }
+
+ 

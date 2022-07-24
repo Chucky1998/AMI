@@ -1,0 +1,226 @@
+<ion-header>
+
+  <ion-toolbar>
+    <ion-icon class="logout" name="log-out-outline" (click)="logout()"></ion-icon>
+    <ion-searchbar placeholder="Search for anything" #searchbar [(ngModel)]="searchInput"
+      (click)="fetchSeries( searchbar.value )" (keyup)="fetchSeries( searchbar.value )"></ion-searchbar>
+
+    <div class="hide" *ngIf="searchResult.length==0">
+      <div class="options">
+        <ion-text>
+          <!--
+          <h4 id="naosei1" (click)="goDeals()">DEALS</h4>
+          <h4 id="naosei2" (click)="goCategories()" class="active">CATEGORIES</h4>
+          -->
+          <h4 class="active" (click)="goDeals()" *ngIf="deals">DEALS</h4>
+          <h4 (click)="goDeals()" *ngIf="!deals">DEALS</h4>
+          <h4 class="active" (click)="goCategories()" *ngIf="!deals">CATEGORIES</h4>
+          <h4 (click)="goCategories()" *ngIf="deals">CATEGORIES</h4>
+          <h4>FILTER</h4>
+          <h4>SORT</h4>
+        </ion-text>
+
+      </div>
+
+      <div *ngIf="deals" class="activeTab2"></div>
+      <div *ngIf="!deals" class="activeTab1"></div>
+
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+
+<ion-content>
+
+
+
+
+  <ion-list>
+    <ion-item *ngFor="let cloth of searchResult" (click)="showDetails(cloth)" [hidden]="toggle">
+
+      <ion-card class="search">
+        <!-- <img src="../../assets/icon/cloth.png" />-->
+        <img src="{{cloth.image}}" />
+
+        <div class="info-search">
+          <h1 class="title">{{cloth.title}}</h1>
+          <p class="des">{{cloth.description.substring(0,22)}}...</p>
+
+          <div class="info">
+            <div class="bids">
+              <p>Bids {{cloth.numberBids}}</p>
+            </div>
+            <div class="timeleft">
+              <p>Time Left: 16d 2h</p>
+            </div>
+          </div>
+
+         
+
+          <div class="card-footer">
+            <div>
+              <h3 class="euro">EUR</h3>
+              <h2 class="price">{{cloth.price}}</h2>
+            </div>
+            <p class="condition">{{cloth.condiction}}</p>
+          </div>
+
+
+        </div>
+
+      </ion-card>
+
+
+    </ion-item>
+  </ion-list>
+
+  <div  *ngIf="searchResult.length==0">
+
+
+    <div *ngIf="!deals">
+      <h1 class="list-header">T-shirts</h1>
+
+      <div class="cloath-slider">
+
+        <ion-slides [options]="{ slidesPerView: 'auto', grabCursor: true }" class="default-left-padding">
+
+          <ion-slide #slidingItem *ngFor="let cloth of clothesTshirt" (click)="debug(cloth.id)">
+            <ion-col class="ion-text-left">
+              <ion-card>
+                <ion-card-header class="ion-no-padding">
+                  <img src="{{cloth.image}}" />
+                </ion-card-header>
+
+                <ion-card-content>
+                  <h2 class="cloathname">{{cloth.title}}</h2>
+                  <h2 class="cloathdes">{{cloth.description.substring(0,20)}}...</h2>
+                  <div class="info">
+                    <div class="bids">
+                      <p>Bids {{cloth.numberBids}}</p>
+                    </div>
+                    <div class="timeleft">
+                      <p>Time Left: 16d 2h</p>
+                    </div>
+                  </div>
+
+                  <div class="card-footer">
+                    <div>
+                      <h3 class="euro">EUR</h3>
+                      <h2 class="price">{{cloth.price}}</h2>
+                    </div>
+                    <p class="condition">{{cloth.condiction}}</p>
+                  </div>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-slide>
+        </ion-slides>
+
+      </div>
+      <h1 class="list-header">Jackets</h1>
+
+      <div class="cloath-slider">
+
+        <ion-slides [options]="{ slidesPerView: 'auto', grabCursor: true }" class="default-left-padding">
+
+          <ion-slide #slidingItem *ngFor="let cloth of clothesJacket" (click)="debug(cloth.id)">
+            <ion-col class="ion-text-left">
+              <ion-card>
+                <ion-card-header class="ion-no-padding">
+                  <img src="{{cloth.image}}" />
+                </ion-card-header>
+
+                <ion-card-content>
+                  <h2 class="cloathname">{{cloth.title}}</h2>
+                  <h2 class="cloathdes">{{cloth.description.substring(0,20)}}...</h2>
+                  <div class="info">
+                    <div class="bids">
+                      <p>Bids {{cloth.numberBids}}</p>
+                    </div>
+                    <div class="timeleft">
+                      <p>Time Left: 16d 2h</p>
+                    </div>
+                  </div>
+
+                  <div class="card-footer">
+                    <div>
+                      <h3 class="euro">EUR</h3>
+                      <h2 class="price">{{cloth.price}}</h2>
+                    </div>
+                    <p class="condition">{{cloth.condiction}}</p>
+                  </div>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-slide>
+        </ion-slides>
+
+      </div>
+
+    </div>
+
+
+    <div *ngIf="deals" >
+
+      <ion-list>
+        <ion-item *ngFor="let cloth of clothes" (click)="debug(cloth.id)">
+
+          <ion-card class="search" >
+            <img src="{{cloth.image}}" />
+
+            <div class="info-search">
+              <h1 class="title">{{cloth.title}}</h1>
+              <p class="des">{{cloth.description.substring(0,22)}}...</p>
+
+              <div class="info">
+                <div class="bids">
+                  <p>Bids {{cloth.numberBids}}</p>
+                </div>
+                <div class="timeleft">
+                  <p>Time Left: 16d 2h</p>
+                </div>
+              </div>
+
+              <div class="card-footer">
+                <div>
+                  <h3 class="euro">EUR</h3>
+                  <h2 class="price">{{cloth.price}}</h2>
+                </div>
+                <p class="condition">{{cloth.condiction}}</p>
+              </div>
+            </div>
+
+          </ion-card>
+        </ion-item>
+      </ion-list>
+      
+
+    </div>
+
+    
+
+
+  </div>
+  <div class="space"></div>
+
+  <div id="footer" >
+
+    <ion-icon class="active" name="home"></ion-icon>
+    <ion-icon class="disactive" name="person-circle"></ion-icon>
+
+
+    <div class="add" (click)="addProduct()">
+      <h1>+</h1>
+      <!--<ion-icon name="add-circle"></ion-icon>-->
+    </div>
+
+
+    <ion-icon class="disactive" name="heart" (click)="goFav()"></ion-icon>
+    <ion-icon class="disactive" name="notifications"></ion-icon>
+
+  </div>
+
+</ion-content>

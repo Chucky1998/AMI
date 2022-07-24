@@ -1,0 +1,146 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button routerLink="/homepage" color="white">
+      <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+    </ion-button>
+
+    <ion-title>Sell</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <div>
+
+   <!-- <div class="photo">-->
+
+    <!--
+      <div class="container">
+        <div class="outer" [ngStyle]="{'background-image': 'url(' + photo + ')'}">
+
+            <div class="inner" (click)="onFileSelected($event)">
+
+              <span class="hiddenFileInput">
+              <input type="File" id="image" accept="image/*" #userPhoto (change)="onFileSelected($event)" name="image" autocomplete="off"/>
+               </span>
+            </div>
+         </div>
+         <img src="" alt="">
+
+      </div>
+      -->
+  
+      <!-- <ion-icon name="add-outline"></ion-icon>
+    </div>-->
+
+  <div class="photos">
+      
+    <div class="photo" (click)="userPhoto.click()">
+      
+      <input type="File" id="image" accept="image/*" #userPhoto (change)="onFileSelected($event)" name="image" autocomplete="off" hidden>
+        <img [src]="fb" *ngIf="fb!=undefined">
+     
+    </div>
+
+    <div class="photo">
+      
+    </div>
+
+    <div class="photo">
+      
+    </div>
+
+    <div class="addphoto">
+      <ion-icon name="add-outline"></ion-icon>
+    </div>
+    
+  </div>
+    
+
+
+    <form [formGroup]="ListProductForm" (ngSubmit)="listProduct()">
+
+    <h1 class="tag">Product details</h1>
+    <div class="input">
+      <ion-input type="text" placeholder="Product Title" formControlName="form1" [(ngModel)]="valuefromuserTitle"></ion-input>
+    </div>
+    
+    <div class="input">
+      <ion-input type="text" placeholder="Brand Name" formControlName="form2" [(ngModel)]="valuefromuserBrand"></ion-input>
+    </div>
+    <div class="input">
+      <ion-input type="text" placeholder="Description" formControlName="form3" [(ngModel)]="valuefromuserDescription"></ion-input>
+    </div>
+    <div class="inline">
+
+      <ion-select interface="popover" placeholder="Size" formControlName="form4" [(ngModel)]="valuefromuserSize">
+        <ion-select-option value="Small">Small</ion-select-option>
+        <ion-select-option value="Medium">Medium</ion-select-option>
+        <ion-select-option value="Large">Large</ion-select-option>
+      </ion-select>
+      <ion-select interface="popover" placeholder="Condiction" formControlName="form5" [(ngModel)]="valuefromuserCondiction">
+        <ion-select-option value="Pre-Owned">Pre-Owned</ion-select-option>
+        <ion-select-option value="Brand New">Brand New</ion-select-option>
+      </ion-select>
+
+      <ion-select interface="popover" placeholder="Category" formControlName="form6" [(ngModel)]="valuefromuserCategory">
+        <ion-select-option value="T-shirts">T-shirts</ion-select-option>
+        <ion-select-option value="Pants">Pants</ion-select-option>
+        <ion-select-option value="Jackets">Jackets</ion-select-option>
+      </ion-select>
+
+    </div>
+
+    <h1 class="tag">Selling details</h1>
+    <div class="input">
+      <ion-input type="number" placeholder="Starting price" formControlName="form7" [(ngModel)]="valuefromuserPrice"></ion-input>
+    </div>
+    <ion-select interface="popover" placeholder="Duration" formControlName="form8" [(ngModel)]="valuefromuserDuration">
+      <ion-select-option value="day">1 day</ion-select-option>
+      <ion-select-option value="week">1 week</ion-select-option>
+      <ion-select-option value="month">1 month</ion-select-option>
+    </ion-select>
+
+    
+
+    <ion-button type="submit" class="place-bid" [disabled]="ListProductForm.invalid || fb==undefined" color="#FFFFFF">
+      <p>List Product</p>
+    </ion-button>
+
+    <div class="input-error" *ngIf="  ListProductForm.get('form1').hasError('required') && ListProductForm.get('form1').touched ||
+                                      ListProductForm.get('form2').hasError('required') && ListProductForm.get('form2').touched ||   
+                                      ListProductForm.get('form3').hasError('required') && ListProductForm.get('form3').touched ||
+                                      ListProductForm.get('form4').hasError('required') && ListProductForm.get('form4').touched ||
+                                      ListProductForm.get('form5').hasError('required') && ListProductForm.get('form5').touched ||
+                                      ListProductForm.get('form6').hasError('required') && ListProductForm.get('form6').touched ||
+                                      ListProductForm.get('form7').hasError('required') && ListProductForm.get('form7').touched ||
+                                      ListProductForm.get('form8').hasError('required') && ListProductForm.get('form8').touched ||
+                                      fb==undefined">
+      All fields are required
+    </div>
+    
+
+  </form>
+
+  </div>
+
+  <div id="footer">
+
+    <ion-icon name="home" (click)="goHome()"></ion-icon>
+    <ion-icon name="person-circle"></ion-icon>
+
+
+    <div class="add">
+      <h1>+</h1>
+      <!--<ion-icon name="add-circle"></ion-icon>-->
+    </div>
+
+
+    <ion-icon name="heart" (click)="goFav()"></ion-icon>
+    <ion-icon name="notifications"></ion-icon>
+
+  </div>
+
+
+</ion-content>

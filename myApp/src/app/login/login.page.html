@@ -1,0 +1,84 @@
+
+
+
+<ion-content padding class="form-content">
+ 
+  <div class="purple-rec">
+    
+    <div class="div-img"> <img  alt="logo" height="375"   src="assets/icon/BeedenLogo.png" > </div> 
+  </div>
+  
+  
+  <h3>Welcome,</h3>
+  <h4>Sign in to continue!</h4>
+
+  <form class="form" [formGroup]="validations_form" (ngSubmit)="tryLogin(validations_form.value)">
+  <!--  <ion-item>
+      
+       <ion-label position="floating" style="color: #6903F3;">Email</ion-label>
+      <ion-input type="text" formControlName="email"></ion-input>
+    </ion-item>
+    -->
+    <div class="input">
+      <ion-input type="text" placeholder="Email" formControlName="email" >
+        <ion-icon name="at-outline" class="emailicon" ></ion-icon>
+      </ion-input>
+      
+    </div>
+
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.email">
+        <div class="error-message" *ngIf="validations_form.get('email').hasError(validation.type) &&
+   (validations_form.get('email').dirty || validations_form.get('email').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    <!--
+    <ion-item>
+      <ion-label position="floating" style="color: #6903F3;">Password</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    -->
+    
+    <div class="input2">
+    
+      <ion-input [type]="showPsw ? 'text':'password'" placeholder="Password" formControlName="password" >
+        <ion-icon name="lock-closed-outline"  class="emailicon"></ion-icon>
+      </ion-input>
+      
+      <ion-button  fill="clear" (click)="showpass()" class="emailicon2">
+        <ion-icon name="eye" *ngIf="showPsw==true"></ion-icon>
+        <ion-icon name="eye-off" *ngIf="showPsw==false"></ion-icon>
+      </ion-button>
+   
+    </div>
+    
+    
+    <!--
+    <ion-list lines="none">
+      <ion-item>
+        
+        <ion-input type="password" placeholder="Password" formControlName="password" ></ion-input>
+        <ion-button slot="end" fill="clear"  class="seeClient">
+          <ion-icon name="eye-outline" color="warning" class="iconEye"></ion-icon>
+          
+        </ion-button>
+      </ion-item>
+    </ion-list>
+     -->
+    
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.password">
+        <div class="error-message" *ngIf="validations_form.get('password').hasError(validation.type) &&
+   (validations_form.get('password').dirty || validations_form.get('password').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    <ion-button class="submit-btn" style="--background: linear-gradient(90deg, rgba(69,104,220,1) 0%, rgba(176,106,179,1) 100%);" expand="block" type="submit" [disabled]="!validations_form.valid">Sign In</ion-button>
+    <label class="error-message">{{errorMessage}}</label>
+  </form>
+  <p class="go-to-register"> Don't have an account? <a style="color: #6903F3;" (click)="goRegisterPage()">Sign up!</a>
+  </p>
+</ion-content>

@@ -1,0 +1,90 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+
+
+
+ion-searchbar{
+    .searchbar-input-container{
+        input{
+            padding-top: 14px !important;
+            padding-bottom: 12px !important;
+            font-size: 18px !important;
+            padding-left: 40px !important;
+           
+        }
+
+        .searchbar-search-icon{
+            top: 7px !important;
+            width: 25px;
+            height: 25px;
+            padding-left: 7px !important;
+           
+            
+        }
+    }
+
+}
+
+.my-custom-class {
+    .alert-wrapper {
+      .alert-head {
+          // header styling here eg. background
+          //background-color: red;
+          background-color: white;
+          h2 {
+              // header text styling here eg. color, font size
+          }
+      }
+      .alert-message{
+        text-align: left;
+        background-color: white;
+
+        p{
+            text-align: left;
+            font-size: 12px;
+            margin-bottom: 0px;
+            margin-top: 0px;
+        }
+ 
+      }
+      .cancel{
+        background-color: #EA4335;
+        span{
+            color: white;
+            font-weight: bold;
+        }
+      }
+      .confirm{
+        background-color: #34A853;
+        span{
+            font-weight: bold;
+            color: white;
+        }
+      }
+    }
+  }

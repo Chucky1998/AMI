@@ -1,0 +1,141 @@
+<ion-content>
+  <div class="header">
+    <ion-buttons>
+      <ion-button routerLink="/homepage">
+
+        <ion-icon slot="icon-only" color="light" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons>
+      <ion-button (click)="changeFav()">
+        <ion-icon slot="icon-only" color="light" name="heart" *ngIf="favorite"></ion-icon>
+        <ion-icon slot="icon-only" color="light" name="heart-outline" *ngIf="!favorite"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </div>
+  
+  <div class="image">
+    <ion-img src="{{cloth.image}}"></ion-img>
+  </div>
+
+  <div class="card">
+
+    <div class="card-content">
+      <div class="card-title">
+
+        <div>
+          <h1 class="ion-no-margin">{{cloth.title}}</h1>
+          <p class="ion-no-margin">{{cloth.condiction}}</p>
+          <div class="time-left">
+            <p class="ion-no-margin">End in: 16d 2h | Monday, 6:31PM </p>
+          </div>
+        </div>
+
+        <div class="price">
+          <h3 class="ion-no-margin">EUR</h3>
+          <h2 class="ion-no-margin">{{cloth.price}}</h2>
+        </div>
+
+      </div>
+
+
+
+      <form [formGroup]="BidForm" (ngSubmit)="showAlert()">
+
+        <div class="bid">
+
+          <div class="bid-amount">
+            <!--<ion-input type="number" min="0" max="999" placeholder="Bid Amount" formControlName="bid" [(ngModel)]="valuefromuser"></ion-input>-->
+            <ion-input type="number" max="999" placeholder="Bid Amount" formControlName="bid"
+              [(ngModel)]="valuefromuser" (ngModelChange)="showVal()"></ion-input>
+          </div>
+
+
+          <ion-button type="submit" class="place-bid" [disabled]="BidForm.invalid || priceError " color="#FFFFFF">
+            <p>Place Bid</p>
+          </ion-button>
+
+
+        </div>
+
+        <div class="input-error" *ngIf=" BidForm.get('bid').hasError('required') && BidForm.get('bid').touched ">
+          Price is required
+        </div>
+
+        <div class="input-error" *ngIf=" priceError && BidForm.get('bid').touched ">
+          The min price is {{priceMin}}€
+        </div>
+
+        <div class="input-error" *ngIf=" BidForm.get('bid').hasError('max') && BidForm.get('bid').touched ">
+          The max price is 999€
+        </div>
+
+      </form>
+
+      <div class="options">
+        <h4 class="active" (click)="goProduct()" *ngIf="productTab">PRODUCT</h4>
+        <h4 (click)="goProduct()" *ngIf="!productTab">PRODUCT</h4>
+        <h4 class="active" (click)="goHistory()" *ngIf="!productTab">BID HISTORY</h4>
+        <h4 (click)="goHistory()" *ngIf="productTab">BID HISTORY</h4>
+        <h4>SIMILAR PRODUCTS</h4>
+      </div>
+
+      <div class="activeTab1" *ngIf="productTab"></div>
+      <div class="activeTab2" *ngIf="!productTab"></div>
+      <div class="tricktab1"></div>
+      <div class="tricktab2"></div>
+
+      <div class="prodtab" *ngIf="productTab">
+        <div class="info">
+          <p class="tag">Brand: <span class="name">{{cloth.brand}}</span> </p>
+        </div>
+
+        <div class="info">
+          <p class="tag">Size: <span class="name">{{cloth.size}}</span> </p>
+        </div>
+
+        <div class="des">
+          <p class="tag">Description</p>
+          <p class="description">{{cloth.description}} dnsandadadadjadahdjahdjahdahdjashdjjsdj ajdjdjabdj abjab jbd
+            jabdabd jabjab djasdbasjkdbasb kasbakdsj basbk </p>
+        </div>
+
+        <div class="creator">
+          <div class="photocreator">
+            <img width="55" height="55" [src]="userInfo.photo" >
+          </div>
+          <p class="nameBit">{{userInfo.name}}</p>
+        </div>
+      </div>
+
+      <div class="histab" *ngIf="!productTab">
+
+        <div class="info2">
+          <p class="tag2">Starting price</p>
+          <p class="startprice">25.00 EUR</p>
+        </div>
+
+        <p class="auction">Auction history</p>
+
+        <div class="bitters" *ngFor="let bitter of bitters">
+          <div class="photoname">
+          <div class="photo">
+            <img width="40" height="40" [src]="bitter.photo" >
+          </div>
+          <p class="nameBit">{{bitter.name}}</p>
+        </div>
+          <p class="priceBit">{{bitter.price}} EUR</p>
+
+        </div>
+       
+        
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+</ion-content>
